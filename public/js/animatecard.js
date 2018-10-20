@@ -1,12 +1,14 @@
 
 
-  $('.card').on("click", animateCard);
+  $('.wrapper').on("click", '.card', animateCard);
 
   function animateCard(){
 
     let thisCard = $(this)[0];
 
-    $(this).unbind('click');
+    console.log(thisCard);
+
+    $('.wrapper').unbind('click');
 
     let children = $(this).children();
 
@@ -40,7 +42,8 @@ let description = children.children('.description');
     rotate.toggleClass('rotate');
 
     setTimeout(function(){
-      thisCard.addEventListener('click', animateCard );
+      // thisCard.addEventListener('click', animateCard );
+      $('.wrapper').on("click", '.card', animateCard);
     },1100);
 
   };

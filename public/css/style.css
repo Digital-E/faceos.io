@@ -2,6 +2,12 @@ body {
 
 }
 
+.load-more {
+  position: relative;
+  top: 300px;
+  text-align: center;
+}
+
 .logo {
   max-width: 200px;
   position: fixed;

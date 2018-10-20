@@ -24,7 +24,8 @@ body
           .role #{user.tags[0]}
          .seemore-button
           img(class='plus-icon' src='assets/plus.svg' alt='')
-a(class='load-more' href='#') load more
+div.load-more
+  a(href='#') load more
 script.
   var next = !{JSON.stringify(next)}
 script(src='js/animatecard.js')

@@ -26,11 +26,6 @@ router.get('/', (req,res) => {
   });
 });
 
-router.get('/next', (req,res) => {
-
-
-
-  });
 
 
 router.post('/ajax-request', (req,res,next) => {
@@ -38,7 +33,7 @@ router.post('/ajax-request', (req,res,next) => {
   cloudinary.v2.search.expression('')
   .with_field('tags')
   .with_field('context')
-  .max_results(1)
+  .max_results(2)
   .next_cursor(req.body.next)
   .execute()
   .then((result)=>{
@@ -51,35 +46,18 @@ router.post('/ajax-request', (req,res,next) => {
   list.users = users;
   list.next = nextCursor;
 
-  console.log(list.users);
-  console.log(list.next);
 
   res.send(list);
-  
+
+
   next();
   });
 
   });
 
   router.all('/ajax-request', function(req,res) {
-    console.log('swag');
-    res.render('hometest');
     res.end();
 });
-
-
-//   //Load more results
-//
-// cloudinary.v2.search.expression('')
-// .with_field('tags')
-// .with_field('context')
-// .next_cursor(result.next_cursor)
-// .execute()
-// .then((result)=>{
-//
-// console.log(result);
-//
-// });
 
 
 export default router;
