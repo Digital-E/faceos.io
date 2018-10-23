@@ -1,5 +1,4 @@
 import express from 'express';
-import axios from 'axios';
 import cloudinary from 'cloudinary';
 
 const router = express.Router();
@@ -20,15 +19,12 @@ router.get('/', (req,res) => {
   list.users = users;
   list.next = nextCursor;
 
-  console.log(list);
-
   res.render('home', list);
   });
 });
 
 
-
-router.post('/ajax-request', (req,res,next) => {
+router.post('/ajax-loadmore', (req,res,next) => {
 
   cloudinary.v2.search.expression('')
   .with_field('tags')

@@ -4,11 +4,23 @@ html
     title=title
     link(rel='stylesheet', href='css/style.css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
     script(src='https://unpkg.com/scrollreveal')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js')
     meta(name='viewport' content='width=device-width, initial-scale=1')
 body
   img(class='logo' src='assets/faceOSLOGO.svg')
+  .container-top
+  div.filter-button
+    img(src='assets/settings.svg')
+    p FILTER
+    img(src='assets/downarrow.svg')
+    div.filter-links
+      a(class='initial-link' href='#') category1
+      a(class='initial-link' href='#') category2
+      a(class='initial-link' href='#') category3
+      a(class='initial-link' href='#') category4
+      a(class='initial-link' href='#') reset
   .wrapper
     each user, i in users
       .container
@@ -30,6 +42,6 @@ script.
   var next = !{JSON.stringify(next)}
 script(src='js/animatecard.js')
 script(src='js/main.js')
-script(src='js/ajax.js')
+script(src='js/ajax-loadmore.js')
 div.background-container
   canvas(class='background')

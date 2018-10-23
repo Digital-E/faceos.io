@@ -2,7 +2,7 @@ $(document).ready(
 $('.load-more').on('click', (e) => {
   e.preventDefault();
   $.ajax({
-    url: 'http://localhost:3000/ajax-request',
+    url: 'http://localhost:3000/ajax-loadmore',
     timeout: 5000,
     method: 'POST',
     data: {next},
@@ -47,9 +47,9 @@ $('.load-more').on('click', (e) => {
 
 $(window).scroll(function() {
     if($(window).scrollTop() == $(document).height() - $(window).height()) {
-      
+
       $.ajax({
-        url: 'http://localhost:3000/ajax-request',
+        url: 'http://localhost:3000/ajax-loadmore',
         timeout: 5000,
         method: 'POST',
         data: {next},
