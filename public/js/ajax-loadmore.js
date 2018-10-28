@@ -33,9 +33,18 @@ $('.load-more').on('click', (e) => {
         </div>
         </div>`
 
-      ))
-      $('.wrapper').append(users);
-      $('.container').animate({opacity:1},1000)
+      ));
+      let numberOfCards = $('.wrapper').children().length;
+      console.log(total);
+      console.log(numberOfCards);
+      console.log(numberOfCards < total);
+      if (numberOfCards < total) {
+        console.log("Loading...");
+        $('.wrapper').append(users);
+        $('.container').animate({opacity:1},1000)
+      } else {
+        console.log("No more to load!");
+      };
     },
     error : (e) => {
 				console.log("ERROR: ", e);
@@ -80,9 +89,18 @@ $(window).scroll(function() {
             </div>
             </div>`
 
-          ))
-          $('.wrapper').append(users);
-          $('.container').animate({opacity:1},1000)
+          ));
+          let numberOfCards = $('.wrapper').children().length;
+          console.log(total);
+          console.log(numberOfCards);
+          console.log(numberOfCards < total);
+          if (numberOfCards < total) {
+            console.log("Loading...");
+            $('.wrapper').append(users);
+            $('.container').animate({opacity:1},1000)
+          } else {
+            console.log("No more to load!");
+          };
         },
         error : (e) => {
             console.log("ERROR: ", e);

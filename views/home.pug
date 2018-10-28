@@ -16,11 +16,11 @@ body
     p FILTER
     img(src='assets/downarrow.svg')
     div.filter-links
-      a(class='initial-link' href='#') category1
-      a(class='initial-link' href='#') category2
-      a(class='initial-link' href='#') category3
-      a(class='initial-link' href='#') category4
-      a(class='initial-link' href='#') reset
+      a(class='initial-link' href='') category1
+      a(class='initial-link' href='') category2
+      a(class='initial-link' href='') category3
+      a(class='initial-link' href='') category4
+      a(class='initial-link' href='') reset
   .wrapper
     each user, i in users
       .container
@@ -37,11 +37,13 @@ body
          .seemore-button
           img(class='plus-icon' src='assets/plus.svg' alt='')
 div.load-more
-  a(href='#') load more
+  a(href='') load more
 script.
   var next = !{JSON.stringify(next)}
+  var total = !{JSON.stringify(totalCount)}
 script(src='js/animatecard.js')
 script(src='js/main.js')
 script(src='js/ajax-loadmore.js')
+script(src='js/ajax-category.js')
 div.background-container
   canvas(class='background')

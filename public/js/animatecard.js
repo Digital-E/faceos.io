@@ -6,8 +6,6 @@
 
     let thisCard = $(this)[0];
 
-    console.log(thisCard);
-
     $('.wrapper').unbind('click');
 
     let children = $(this).children();
